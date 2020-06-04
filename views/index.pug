@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
+        link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700")
+        
+        style
+            include style/style.css
+
+        script(src="https://code.jquery.com/jquery-3.3.1.min.js")
+        script(src="js/main.js")
+
+        title #{title} :: #{pageNum ? "Page " + pageNum : "Home"}
+    body
+        div(class="box-title")
+            h3= title
+            h5 Homepage is still in development
+        div(class="box-content")
+            form(action="/search", method="post", class="search")
+                input(type="text", name="query")
+                input(type="submit", value="search")
+            center
+                if results && results.length > 0 
+                    div(class="box-hentai-result")
+                        each book in results
+                            a(href="/g/"+book.bookId, alt=book.title)
+                                div(class="box-hentai", id="box-hentai")
+                                    img(src=book.thumbnail, class="thumb-hentai", alt=book.bookId, style="width:100%;")
+                                    span(id="part-title")= book.title.substr(0, 50) + '...'
+                                    
+                    
+                else
+                    p(class="nothing") Nothing Here..
+                
+                if pageNum
+
+
