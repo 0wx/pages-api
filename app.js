@@ -43,7 +43,7 @@ app.get('/g/:id', (req, res) => {
                 if(insert) pagesWithBanner.push(banner);
                 insert = false;
             });
-            res.render('page', {pages: pagesWithBanner, title: title});
+            res.render('page', {pages: pagesWithBanner, title: title, banner: banner});
         })
         .catch(res.send)
     })

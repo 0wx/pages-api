@@ -16,6 +16,12 @@ html * {
 img.hentai-page {
   width: 100%;
   max-width: 500px;
+  color: #fff;
+}
+img.hentai-page-banner {
+  width: 100%;
+  max-width: 500px;
+  color: #ff0000;
 }
 .box-hentai {
   box-shadow: 0 4px 8px 0 rgba(179, 179, 179, 0.2);

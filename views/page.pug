@@ -9,5 +9,8 @@ html(lang="en")
     body
         center
             each page in pages
-                img(src=page, class="hentai-page")
+                if (page == banner)
+                    img(src=page, class="hentai-page-banner", alt="If you seen this, that's mean something wrong with the mirror page link (either bug or your ISP blocking our services), try to refresh or contact me t.me/awotism", srcset="")
+                else
+                    img(src=page, class="hentai-page", alt=page.split("/")[page.split("/").length-1])
                 br
